@@ -50,4 +50,101 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Sanchez", serif;
+}
+
+.entete__titre {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.entete__welcome {
+  text-align: left;
+  font-size: 30px;
+  margin-top: 20px;
+  color: #333;
+}
+
+.form-event {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.form-event__titre {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.form-event__label {
+  display: block;
+  margin-bottom: 5px;
+}
+.form-event__champ, .form-event__zone-texte {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+.form-event__champ-date {
+  width: 50%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+.form-event input[type=date] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+.form-event__bouton {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.form-event__bouton:hover {
+  background-color: #45a049;
+}
+
+.event-list-container {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.list-event__titre {
+  font-size: 1.5em;
+}
+.list-event__liste {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.list-event__liste__item {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+.list-event__liste__item:last-child {
+  border-bottom: none;
+}
+
+body {
+  margin-bottom: 30px;
 }/*# sourceMappingURL=style.css.map */

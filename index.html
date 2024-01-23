@@ -1,13 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="assets/js/script.js" defer ></script>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="assets/js/script.js" defer></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
 
-</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="app">
+      <header class="entete">
+        <h1 class="entete__titre">Didlydoo</h1>
+
+        <p id="username" class="entete__welcome">welcome</p>
+      </header>
+
+      <div class="form-event">
+        <h2 class="form-event__titre">Créer un nouvel évènement</h2>
+
+        <form class="form-event__formulaire" id="create-event">
+          <label for="event-name" class="form-event__label"
+            >Nom de l'évènement :</label
+          >
+          <input
+            type="text"
+            id="event-name"
+            class="form-event__champ"
+            required
+            maxlength="255"
+          />
+
+          <label for="event-description" class="form-event__label"
+            >Description :</label
+          >
+          <textarea
+            id="event-description"
+            class="form-event__zone-texte"
+            required
+            maxlength="255"
+          ></textarea>
+
+          <label for="event-date" class="form-event__label">Date :</label>
+          <input
+            type="date"
+            id="event-date"
+            class="form-event__champ-date"
+            required
+          />
+          <button
+            type="button"
+            onclick="createEvent()"
+            class="form-event__bouton"
+          >
+            Créer
+          </button>
+        </form>
+      </div>
+
+      <div class="list-event">
+        <h2 class="list-event__titre">Liste des évènements</h2>
+        <div class="event-list-container">
+          <ul id="events" class="list-event__liste"></ul>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
