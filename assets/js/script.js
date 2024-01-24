@@ -9,7 +9,9 @@ createEventForm.addEventListener('submit', async (event) => {
   const authorInput = document.getElementById('event-author');
   const nameInput = document.getElementById('event-name');
   const descriptionInput = document.getElementById('event-description');
-  const dateInput = document.getElementById('event-date');
+  const dateInput = document.getElementById('event-dates');
+
+//   const selectedDates = dateInput.value.split(',');
 
   const eventData = {
     author: authorInput.value,
