@@ -14,3 +14,16 @@ authorInputElement.value = enteredUsername;
         }
     }
 }
+
+export function initializeSwitchUserIcon() {
+    const switchUserIcon = document.getElementById('switchUserIcon');
+
+    if (!switchUserIcon) {
+        console.error("Switch user icon not found.");
+        return;
+    }
+
+    switchUserIcon.addEventListener('click', () => {
+        location.reload();
+    });
+}

@@ -7,7 +7,14 @@ async function fetchData() {
   
       data.forEach(event => {
         const eventDiv = document.createElement('div');
-        eventDiv.innerHTML = `<h3>${event.name}</h3><p>${event.description}</p>`;
+        eventDiv.innerHTML = 
+        <h1>Nom de l'auteur
+          
+        </h1>
+        `<h3>${event.name}event</h3>
+        <p>${event.description}</p>`
+        
+        ;
         eventListContainer.appendChild(eventDiv);
       });
     } catch (error) {

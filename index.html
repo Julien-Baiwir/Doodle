@@ -1,91 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="module" src="assets/js/script.js" defer></script>
-    <link rel="stylesheet" href="assets/css/style.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script type="module" src="assets/js/script.js" defer></script>
+  <link rel="stylesheet" href="assets/css/style.css" />
 
-    <title>Didlydoo</title>
-  </head>
-  <body>
-    <div class="app">
-      <header class="entete">
-        <h1 class="entete__titre">Didlydoo</h1>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap" rel="stylesheet" />
 
-        <p id="username" class="entete__welcome"></p>
-      </header>
+  <title>Didlydoo</title>
+</head>
 
-      <div class="form-event">
+<body>
+  <div class="app">
+    <header class="entete">
+      <h1 class="entete__titre">Didlydoo</h1>
 
-        <h2 class="form-event__titre">Créer un nouvel évènement</h2>
+      <p class="entete__welcome" id="username"></p>
 
-        <form class="form-event__formulaire" id="create-event">
+      <img src="assets/images/switchUser.png" alt="Switch User" class="entete__icone" id="switchUserIcon">
 
-          <label for="event-author" class="form-event__label"
-          >Nom de l'auteur:</label
-      >
-      <input
-          type="text"
-          id="event-author"
-          class="form-event__champ"
-          required
-          maxlength="255"
-      />
+    </header>
 
-          <label for="event-name" class="form-event__label"
-            >Nom de l'évènement :</label
-          >
-          <input
-            type="text"
-            id="event-name"
-            class="form-event__champ"
-            required
-            maxlength="255"
-          />
+    <div class="form-event">
 
-          <label for="event-description" class="form-event__label"
-            >Description :</label
-          >
-          <textarea
-            id="event-description"
-            class="form-event__zone-texte"
-            required
-            maxlength="255"
-          ></textarea>
+      <h2 class="form-event__titre">Créer un nouvel évènement</h2>
 
-          <label for="event-date" class="form-event__label">Date :</label>
-          <input
-            type="date"
-            id="event-dates"
-            class="form-event__champ-date"
-            required
-            multiple
-          />
+      <form class="form-event__formulaire" id="create-event">
 
-          <button
-            type="submit"
-            class="form-event__bouton"
-          >
-            Créer
-          </button>
+        <label for="event-author" class="form-event__label">Nom de l'auteur:</label>
+        <input type="text" id="event-author" class="form-event__champ" required maxlength="255" />
 
-        </form>
-      </div>
+        <label for="event-name" class="form-event__label">Nom de l'évènement :</label>
+        <input type="text" id="event-name" class="form-event__champ" required maxlength="255" />
 
-      <div class="list-event">
-        <h2 class="list-event__titre">Liste des évènements</h2>
-        <div class="event-list-container">
-          <ul id="events" class="list-event__liste"></ul>
-        </div>
-      </div>
+        <label for="event-description" class="form-event__label">Description :</label>
+        <textarea id="event-description" class="form-event__zone-texte" required maxlength="255"></textarea>
+
+        <label for="event-date" class="form-event__label">Date :</label>
+        <input type="date" id="event-dates" class="form-event__champ-date" required/>
+
+        <button type="submit" class="form-event__btn">
+          <img src="assets/images/plus.svg" alt="Plus Icon" class="form-event__btn__plus">
+        </button>
+
+        <button type="submit" class="form-event__btn">
+          Créer
+        </button>
+
+      </form>
     </div>
-  </body>
+
+
+
+
+
+    <div class="menu__btn">
+      <button type="submit" class="menu__btn__events"> Afficher Tous les évenèments</button>
+    </div>
+
+  </div>
+</body>
+
 </html>

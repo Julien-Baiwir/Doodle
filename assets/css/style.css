@@ -59,16 +59,32 @@ table {
   font-family: "Sanchez", serif;
 }
 
+.entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
 .entete__titre {
   font-size: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
+  color: #4caf50;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
 }
-
 .entete__welcome {
   text-align: left;
   font-size: 30px;
-  margin-top: 20px;
+  margin: 20px 0;
   color: #333;
+  padding: 30px 35px 0px 0px;
+}
+.entete__icone {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
 }
 
 .form-event {
@@ -110,15 +126,40 @@ table {
   border-radius: 3px;
   box-sizing: border-box;
 }
-.form-event__bouton {
+.form-event__btn {
   background-color: #4caf50;
   color: #fff;
   padding: 10px 15px;
   border: none;
   border-radius: 3px;
+  font-size: 16px;
   cursor: pointer;
 }
-.form-event__bouton:hover {
+.form-event__btn:hover {
+  background-color: #45a049;
+}
+.form-event__btn__plus {
+  height: 13px;
+  width: 13px;
+}
+
+.menu__btn {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.menu__btn__events {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.menu__btn__events:hover {
   background-color: #45a049;
 }
 
