@@ -52,14 +52,9 @@ table {
   border-spacing: 0;
 }
 
-body {
-  margin-bottom: 30px;
-}
-
 .app {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
   font-family: "Sanchez", serif;
 }
 
@@ -67,8 +62,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #f0f0f0;
 }
 .entete__titre {
   font-size: 50px;
@@ -83,7 +76,7 @@ body {
   font-size: 30px;
   margin: 20px 0;
   color: #333;
-  padding: 30px 35px 0px 0px;
+  padding: 30px 40px 0px 0px;
 }
 .entete__icone {
   width: 30px;
@@ -96,7 +89,7 @@ body {
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .form-event__titre {
   font-size: 20px;
@@ -107,7 +100,7 @@ body {
   margin-bottom: 5px;
 }
 .form-event__champ, .form-event__zone-texte {
-  width: 100%;
+  width: 66%;
   padding: 8px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -148,9 +141,6 @@ body {
 }
 
 .menu__btn {
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
-  padding: 20px;
   border-radius: 5px;
   margin-bottom: 20px;
 }
@@ -167,25 +157,117 @@ body {
   background-color: #45a049;
 }
 
-.event-list-container {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  margin-top: 10px;
+.container-cards {
+  display: flex;
+  flex-direction: column;
 }
 
-.list-event__titre {
-  font-size: 1.5em;
+.card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: "Sanchez", sans-serif;
+  margin-bottom: 15px;
 }
-.list-event__liste {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+.card__header {
+  background-color: white;
+  margin-left: 5%;
+  text-align: left;
 }
-.list-event__liste__item {
-  border-bottom: 1px solid #ccc;
-  padding: 10px 0;
+.card__header__title {
+  font-family: "Sanchez", sans-serif;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+  color: #4caf50;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+  margin-top: 5px;
 }
-.list-event__liste__item:last-child {
-  border-bottom: none;
+.card__header__author, .card__header__descp {
+  font-family: "Sanchez", sans-serif;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+.card__table {
+  margin: auto;
+  width: 90%;
+  border-collapse: collapse;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.card__table th, .card__table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+.card__table th {
+  background-color: #f8f8f8;
+}
+.card__table td {
+  position: relative;
+}
+.card__btn {
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.card__btn__join, .card__btn__modif, .card__btn__suppress {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.card__btn__join:hover, .card__btn__modif:hover, .card__btn__suppress:hover {
+  background-color: #45a049;
+}
+
+.presence-mark {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  margin: 0 3px;
+  cursor: pointer;
+  position: relative;
+  border: 2px solid #ddd;
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+.presence-mark::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.v-mark::before {
+  background-color: #2ecc71;
+}
+
+.x-mark::before {
+  background-color: #e74c3c;
+}
+
+.presence-mark:hover::before {
+  border: 2px solid #333;
+}
+
+.v-mark {
+  border-color: #2ecc71;
+}
+
+.x-mark {
+  border-color: #e74c3c;
 }/*# sourceMappingURL=style.css.map */
