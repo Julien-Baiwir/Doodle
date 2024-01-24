@@ -24,9 +24,22 @@
       </header>
 
       <div class="form-event">
+
         <h2 class="form-event__titre">Créer un nouvel évènement</h2>
 
         <form class="form-event__formulaire" id="create-event">
+
+          <label for="event-author" class="form-event__label"
+          >Nom de l'auteur:</label
+      >
+      <input
+          type="text"
+          id="event-author"
+          class="form-event__champ"
+          required
+          maxlength="255"
+      />
+
           <label for="event-name" class="form-event__label"
             >Nom de l'évènement :</label
           >
@@ -55,13 +68,14 @@
             class="form-event__champ-date"
             required
           />
+
           <button
-            type="button"
-            onclick="createEvent()"
+            type="submit"
             class="form-event__bouton"
           >
             Créer
           </button>
+
         </form>
       </div>
 
