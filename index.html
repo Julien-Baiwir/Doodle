@@ -3,6 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Include Moment.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+<!-- Include Pikaday -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/css/pikaday.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/pikaday.min.js"></script>
+
+
     <script type="module" src="assets/js/script.js" defer></script>
     <link rel="stylesheet" href="assets/css/style.css" />
 
@@ -61,14 +69,13 @@
             maxlength="255"
           ></textarea>
 
-          <label for="event-date" class="form-event__label">Date :</label>
-          <input
-            type="date"
-            id="event-dates"
-            class="form-event__champ-date"
-            required
-            multiple
-          />
+          <label for="event-dates" class="form-event__label">Dates :</label>
+<input
+  type="text"
+  id="event-dates"
+  class="form-event__champ-date"
+  required
+/>
 
           <button
             type="submit"
@@ -76,7 +83,7 @@
           >
             Créer
           </button>
-
+          <div id="selected-dates"></div>
         </form>
       </div>
 
