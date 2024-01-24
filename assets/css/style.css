@@ -52,6 +52,10 @@ table {
   border-spacing: 0;
 }
 
+body {
+  margin-bottom: 30px;
+}
+
 .app {
   max-width: 800px;
   margin: 0 auto;
@@ -184,8 +188,4 @@ table {
 }
 .list-event__liste__item:last-child {
   border-bottom: none;
-}
-
-body {
-  margin-bottom: 30px;
 }/*# sourceMappingURL=style.css.map */

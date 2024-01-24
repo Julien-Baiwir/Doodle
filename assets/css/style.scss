@@ -5,6 +5,9 @@
 @import 'style/buttons';
 @import 'style/input';
 
+body {
+  margin-bottom: 30px;
+}
 
 // style général de l'app 
 .app {
@@ -168,6 +171,4 @@
   }
   
 
-  body {
-    margin-bottom: 30px;
-  }
+ 
