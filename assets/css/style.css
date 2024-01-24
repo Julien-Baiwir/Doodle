@@ -270,4 +270,12 @@ table {
 
 .x-mark {
   border-color: #e74c3c;
+}
+
+#check {
+  color: #45a049;
+}
+
+#uncheck {
+  color: red;
 }/*# sourceMappingURL=style.css.map */
