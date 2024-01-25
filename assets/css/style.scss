@@ -219,6 +219,7 @@ flex-direction: column;
 
 }
 
+// icons à supprimer?
 .presence-mark {
   width: 18px;
   height: 18px;
@@ -262,10 +263,8 @@ flex-direction: column;
   border-color: #e74c3c;
 }
 
-#check{
-color: #45a049;
-}
-
-#uncheck{
-color:red;
+// new icons
+.icons{
+  height:30px;
+  width: 30px;
 }

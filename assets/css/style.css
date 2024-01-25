@@ -272,10 +272,7 @@ table {
   border-color: #e74c3c;
 }
 
-#check {
-  color: #45a049;
-}
-
-#uncheck {
-  color: red;
+.icons {
+  height: 30px;
+  width: 30px;
 }/*# sourceMappingURL=style.css.map */
