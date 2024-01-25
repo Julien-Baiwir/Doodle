@@ -1,73 +1,47 @@
-async function getAllEvents() {
-    try {
-        const response = await fetch('http://localhost:3000/api/events');
-        if (response.ok) {
-            let events = await response.json();
-            console.log(events);
-
-            let availabilities = {};
-      
-
-           
-            console.log(availabilities);
-            return events;
-        } else {
-            console.error('Error fetching events:', response.statusText);
-            return [];
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        return [];
-    }
-}
-
-getAllEvents();
-
-
-// let availabilities = {
-//     'michou':[
-//         {
-//             date: '11/11/2011',
-//             available: false
-//         },
-//         {
-//             date: '11/11/2011',
-//             available: false
-//         },
-//         {
-//             date: '11/11/2011',
-//             available: false
-//         }
-//     ],
-//     'Jonnhy':[
-//         {
-//             date: '11/11/2011',
-//             available: false
-//         },
-//         {
-//             date: '11/11/2011',
-//             available: false
-//         },
-//         {
-//             date: '11/11/2011',
-//             available: false
-//         }
-//     ],
-// }
-
 // async function getAllEvents() {
 //     try {
 //         const response = await fetch('http://localhost:3000/api/events');
 //         if (response.ok) {
-//             const events = await response.json();
+//             let events = await response.json();
+            
 
-//             let availabilities = {};
-//             events.forEach((event) => {
-//                 const author = event.author;
-//                 availabilities[author] = [];
-//             console.log(availabities);
-//              });
+//             let availabilities = [];
 
+//             events.forEach(event => {
+//                 event.dates.forEach(date => {
+//                     date.attendees.forEach(attendee => {
+//                         let attendeeAvailability = availabilities.find(avail => avail.attendeeName === attendee.name);
+//                         if (!attendeeAvailability) {
+//                             attendeeAvailability = {
+//                                 attendeeName: attendee.name,
+//                                 eventAvailabilities: []
+//                             };
+//                             availabilities.push(attendeeAvailability);
+//                         }
+
+//                         let eventAvailability = attendeeAvailability.eventAvailabilities.find(avail => avail.eventName === event.name);
+//                         if (!eventAvailability) {
+//                             eventAvailability = {
+//                                 eventName: event.name,
+//                                 dateAvailabilities: []
+//                             };
+//                             attendeeAvailability.eventAvailabilities.push(eventAvailability);
+//                         }
+
+//                         let dateAvailability = {
+//                             date: date.date,
+//                             availability: attendee.available
+//                         };
+
+//                         eventAvailability.dateAvailabilities.push(dateAvailability);
+//                     });
+//                 });
+//             });
+
+//             console.log(availabilities);
+//             return availabilities;
+           
+           
 //         } else {
 //             console.error('Error fetching events:', response.statusText);
 //             return [];
@@ -78,124 +52,141 @@ getAllEvents();
 //     }
 // }
 
-
-
-// event.dates.forEach((date) => {
-//     const th = document.createElement('th');
-//     th.textContent = date.date;
-//     dateColumn.appendChild(th);
-// });
-
-
-                    // // Parcours des dates de l'événement
-                    // dates.forEach(dateObj => {
-                    //     const date = dateObj.date;
-                    //     const attendees = dateObj.attendees;
-
-                    //     // Vérification s'il y a des participants à la date
-                    //     if (attendees && attendees.length > 0) {
-                    //         // Parcours des participants
-                    //         attendees.forEach(attendee => {
-                    //             const attendeeName = attendee.name;
-                    //             const availability = {
-                    //                 date: date,
-                    //                 available: attendee.available || false // par défaut, si la propriété available n'est pas définie
-                    //             };
-
-                    //             // Ajout de la disponibilité à l'auteur correspondant
-                    //             if (!availabilities[attendeeName]) {
-                    //                 availabilities[attendeeName] = [];
-                    //             }
-
-                    //             availabilities[attendeeName].push(availability);
-                  
-
-// async function generateEventCard() {
+// async function getAllEvents() {
 //     try {
-//         const events = await getAllEvents();
-//         const eventsContainer = document.getElementById('container-cards');
+//         const response = await fetch('http://localhost:3000/api/events');
+//         if (response.ok) {
+//             let events = await response.json();
 
-//         events.forEach((event) => {
+//             let availabilities = [];
 
-//             if (typeof event !== 'object') {
-//                 console.error('Invalid event object:', event);
-//                 return;
-//             }
+//             events.forEach(event => {
+//                 // Create an array for event names and add it to the availabilities array
+//                 const eventNameArray = [event.name];
+//                 availabilities.push(eventNameArray);
 
-//             const card = document.createElement('div');
-//             card.classList.add('card');
+//                 event.dates.forEach(date => {
+//                     date.attendees.forEach(attendee => {
+//                         let attendeeAvailability = availabilities.find(avail => avail[0] === attendee.name);
+//                         if (!attendeeAvailability) {
+//                             attendeeAvailability = [attendee.name, []];
+//                             availabilities.push(attendeeAvailability);
+//                         }
 
-//             const header = document.createElement('div');
-//             header.classList.add('card__header');
+//                         let eventAvailability = attendeeAvailability[1].find(avail => avail[0] === event.name);
+//                         if (!eventAvailability) {
+//                             eventAvailability = [event.name, []];
+//                             attendeeAvailability[1].push(eventAvailability);
+//                         }
 
-//             const title = document.createElement('h2');
-//             title.classList.add('card__header__title');
-//             title.textContent = event.name || '';
-
-//             const author = document.createElement('h3');
-//             author.classList.add('card__header__author');
-//             author.textContent = `par ${event.author || ''}`;
-
-//             const description = document.createElement('h3');
-//             description.classList.add('card__header__descp');
-//             description.textContent = event.description || '';
-
-//             header.appendChild(title);
-//             header.appendChild(author);
-//             header.appendChild(description);
-
-//             // tableau
-//             const table = document.createElement('table');
-//             table.classList.add('card__table');
-
-//             // colonnes
-//             const thead = document.createElement('thead');
-//             const dateColumn = document.createElement('tr');
-
-//             const emptyHeader = document.createElement('th');
-//             dateColumn.appendChild(emptyHeader);
-
-//             event.dates.forEach((date) => {
-//                 const th = document.createElement('th');
-//                 th.textContent = date.date;
-//                 dateColumn.appendChild(th);
+//                         let dateAvailability = [date.date, attendee.available];
+//                         eventAvailability[1].push(dateAvailability);
+//                     });
+//                 });
 //             });
-//             thead.appendChild(dateColumn);
-//             table.appendChild(thead);
 
-//             //rows
-      
-//             // ajout tableau complet
-//             card.appendChild(header);
-//             card.appendChild(table);
+//             console.log(availabilities);
+//             return availabilities;
 
-//             eventsContainer.appendChild(card);
-//         });
+//         } else {
+//             console.error('Error fetching events:', response.statusText);
+//             return [];
+//         }
 //     } catch (error) {
-//         console.error('Error generating event cards:', error);
+//         console.error('Error:', error);
+//         return [];
 //     }
 // }
-// generateEventCard();
+// getAllEvents();
+
+// async function getAllEvents() {
+//     try {
+//         const response = await fetch('http://localhost:3000/api/events');
+//         if (response.ok) {
+//             let events = await response.json();
+
+//             let availabilities = [];
+
+//             events.forEach(event => {
+//                 // Create an array for event names
+//                 const eventArray = [event.name];
+                
+//                 // Create an array for attendees inside the event array
+//                 const attendeesArray = eventArray.concat(event.dates.flatMap(date => 
+//                     date.attendees.flatMap(attendee => attendee.name)
+//                 ));
+                
+//                 // Create an array for dates and availability inside the attendees array
+//                 const datesArray = attendeesArray.concat(event.dates.flatMap(date => 
+//                     date.attendees.flatMap(attendee => 
+//                         [date.date, attendee.available]
+//                     )
+//                 ));
+
+//                 // Push the arrays to the main availabilities array
+//                 availabilities.push(eventArray, attendeesArray, datesArray);
+//             });
+
+//             console.log(availabilities);
+//             return availabilities;
+
+//         } else {
+//             console.error('Error fetching events:', response.statusText);
+//             return [];
+//         }
+//     } catch (error) {
+//         console.error('Error:', error);
+//         return [];
+//     }
+// }
+// getAllEvents();
+
+async function getAllEvents() {
+    try {
+        const response = await fetch('http://localhost:3000/api/events');
+        if (response.ok) {
+            let events = await response.json();
+
+            let availabilities = [];
+
+            events.forEach(event => {
+                // Create an object for the event
+                const eventObj = { eventName: event.name, attendees: [] };
+
+                // Collect unique attendee names for each date
+                event.dates.forEach(date => {
+                    date.attendees.forEach(attendee => {
+                        // Find or create an attendee object
+                        let attendeeObj = eventObj.attendees.find(a => a.attendeeName === attendee.name);
+
+                        if (!attendeeObj) {
+                            attendeeObj = { attendeeName: attendee.name, dates: [] };
+                            eventObj.attendees.push(attendeeObj);
+                        }
+
+                        // Add date and availability information
+                        const dateInfo = { date: date.date, availability: attendee.available };
+                        attendeeObj.dates.push(dateInfo);
+                    });
+                });
+
+                // Push the eventObj to the main availabilities array
+                availabilities.push(eventObj);
+            });
+
+            console.log(availabilities);
+            return availabilities;
+
+        } else {
+            console.error('Error fetching events:', response.statusText);
+            return [];
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        return [];
+    }
+}
 
 
-// // let example_attendees = [
-// //     {
-// //         name: 'Michou',
-// //         availability: [{
-// //             date: '11/11/2011',
-// //             available: false
-// //         },
-// //         {
-// //             date: '11/11/2011',
-// //             available: false
-// //         },
-// //         {
-// //             date: '11/11/2011',
-// //             available: false
-// //         }]
-// //     },
-// //     {
-// //         name: 'Jhonny',
-// //         availability: [true, null, false]
-// //     },
-// // ]
+
+getAllEvents();
