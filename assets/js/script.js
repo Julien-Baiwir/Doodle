@@ -150,13 +150,13 @@ async function getAllEvents() {
             let availabilities = [];
 
             events.forEach(event => {
-                // Create an object for the event
+                // object for the event
                 const eventObj = { eventName: event.name, attendees: [] };
 
-                // Collect unique attendee names for each date
+                // unique attendee names for each date
                 event.dates.forEach(date => {
                     date.attendees.forEach(attendee => {
-                        // Find or create an attendee object
+                        // attendee object
                         let attendeeObj = eventObj.attendees.find(a => a.attendeeName === attendee.name);
 
                         if (!attendeeObj) {
@@ -164,13 +164,11 @@ async function getAllEvents() {
                             eventObj.attendees.push(attendeeObj);
                         }
 
-                        // Add date and availability information
+                        //  date and availability 
                         const dateInfo = { date: date.date, availability: attendee.available };
                         attendeeObj.dates.push(dateInfo);
                     });
                 });
-
-                // Push the eventObj to the main availabilities array
                 availabilities.push(eventObj);
             });
 
@@ -188,20 +186,18 @@ async function getAllEvents() {
 }
 getAllEvents();
 
+
 async function displayEvents() {
     try {
         const availabilities = await getAllEvents();
 
-        // Get the container where you want to append the tables
         const container = document.getElementById('container-cards');
 
-        // Loop through each event
+   
         availabilities.forEach(event => {
-            // Create a table element
+ 
             const table = document.createElement('table');
-            table.classList.add('event-table'); // Add a class for styling
-
-            // Create the first row with dates, adding an empty cell at the beginning
+            table.classList.add('event-table'); 
             const datesRow = document.createElement('tr');
             datesRow.appendChild(document.createElement('th')); // Empty cell
             event.attendees[0].dates.forEach(dateInfo => {
@@ -211,28 +207,26 @@ async function displayEvents() {
             });
             table.appendChild(datesRow);
 
-            // Loop through each attendee
+           
             event.attendees.forEach((attendee, index) => {
-                // Create a new row for each attendee
+              
                 const attendeeRow = document.createElement('tr');
 
-                // Add the attendee name to the first cell
+                // attendee name  first cell
                 const nameCell = document.createElement('td');
                 nameCell.textContent = attendee.attendeeName;
                 attendeeRow.appendChild(nameCell);
 
-                // Add availability for each date in subsequent cells
+                // availability for each date in subsequent cells
                 attendee.dates.forEach(dateInfo => {
                     const availabilityCell = document.createElement('td');
                     availabilityCell.textContent = dateInfo.availability ? 'Available' : 'Not Available';
                     attendeeRow.appendChild(availabilityCell);
                 });
-
-                // Append the attendee row to the table
                 table.appendChild(attendeeRow);
             });
 
-            // Append the table to the container
+
             container.appendChild(table);
         });
     } catch (error) {
@@ -240,7 +234,6 @@ async function displayEvents() {
     }
 }
 
-// Call the displayEvents function to generate and append tables to the DOM
 displayEvents();
 
 
