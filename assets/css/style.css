@@ -229,49 +229,6 @@ table {
   background-color: #45a049;
 }
 
-.presence-mark {
-  width: 18px;
-  height: 18px;
-  display: inline-block;
-  margin: 0 3px;
-  cursor: pointer;
-  position: relative;
-  border: 2px solid #ddd;
-  background-color: #fff;
-  border-radius: 3px;
-}
-
-.presence-mark::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
-
-.v-mark::before {
-  background-color: #2ecc71;
-}
-
-.x-mark::before {
-  background-color: #e74c3c;
-}
-
-.presence-mark:hover::before {
-  border: 2px solid #333;
-}
-
-.v-mark {
-  border-color: #2ecc71;
-}
-
-.x-mark {
-  border-color: #e74c3c;
-}
-
 .icons {
   height: 30px;
   width: 30px;
