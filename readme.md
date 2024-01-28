@@ -4,6 +4,9 @@ Didlydoo is your go-to web application for hassle-free event planning. Whether i
 
 ![DoodleMate Header](assets/images/readme/header.PNG)
 
+## Constraint
+The entire backend will be provided locally, and it will be necessary to communicate directly with these files to access and modify the data.
+
 ## Features
 
 - **Event Overview**: Easily browse through a comprehensive list of events, complete with participant availability.
