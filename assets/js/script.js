@@ -16,8 +16,8 @@ getAllEvents();
 const addCards = document.querySelector('.menu__btn__events');
 addCards.addEventListener('click', addDomEvents);
 
-const addCards = document.querySelector('.menu__btn__suppress');
-addCards.addEventListener('click', btnDelete );
+const suppressCards = document.querySelector('.menu__btn__suppress');
+suppressCards.addEventListener('click', btnDelete );
 
 
 //////en cours de reconstruction créer et modifier event
