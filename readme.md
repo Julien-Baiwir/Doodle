@@ -1,6 +1,6 @@
-# DoodleMate
+# Didlydoo
 
-DoodleMate is your go-to web application for hassle-free event planning. Whether it's a casual get-together or a family reunion, DoodleMate simplifies the process of coordinating schedules and finding the perfect date for everyone involved. Dive into the world of seamless event management with DoodleMate!
+Didlydoo is your go-to web application for hassle-free event planning. Whether it's a casual get-together or a family reunion, Didlydoo simplifies the process of coordinating schedules and finding the perfect date for everyone involved. Dive into the world of seamless event management with Didlydoo!
 
 ![DoodleMate Header](assets/images/readme/header.PNG)
 
@@ -14,7 +14,7 @@ DoodleMate is your go-to web application for hassle-free event planning. Whether
 
 ## Bonus Feature
 
-- **Smart Scheduling**: DoodleMate automatically calculates the best date for an event based on participant availabilities.
+- **Smart Scheduling**: Didlydoo automatically calculates the best date for an event based on participant availabilities.
 
 ## Tech Stack
 - **HTML, CSS/SASS, JavaScript**: Responsible for structure, presentation, and interactive behavior.
@@ -25,4 +25,4 @@ DoodleMate is your go-to web application for hassle-free event planning. Whether
 
 ![DoodleMate Main](assets/images/readme/main.PNG)
 
-Work in Progress.
+( Work in Progress.)
